@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Joan Contreras | Data Engineer</title>
+    <link rel="icon" type="image/jpeg" href="N.jpeg">
     <meta
         name="description"
         content="Portfolio de Joan Jesús Contreras Arias, Data Engineer e Ingeniero Electromecánico."
@@ -26,14 +27,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="top">
     <header class="header">
         <div class="logo">
             <span class="term-cyan">
                 <i class="bi bi-github" aria-hidden="true"></i> nonename-contreras
             </span>
             <span class="term-orange">~</span>
-            <span class="term-text">&gt;_</span>
+            <span class="prompt" style="margin-left: 8px; font-weight: 500;">&gt;_</span>
         </div>
         <nav class="nav-links" aria-label="Main navigation">
             <a href="#about">About</a>
@@ -43,12 +44,12 @@
     <main>
         <section class="hero" aria-label="Introduction">
             <div class="hero-content">
-                <p class="greeting">&lt; cd &gt;</p>
+                <p class="greeting">&lt; <span class="text-orange">~</span> &gt;</p>
 
                 <h1>Joan Jesus<br>Contreras Arias</h1>
 
                 <h2>
-                    <span class="highlight">Data Engineer</span>
+                    <span class="highlight">Data Engineer Jr</span>
                     | Electromechanical Engineer
                 </h2>
 
@@ -62,6 +63,7 @@
                     <span class="skill-tag">Airflow</span>
                     <span class="skill-tag">Pandas</span>
                     <span class="skill-tag">SSH</span>
+                    <span class="skill-tag">Dbt</span>
                 </div>
 
                 <div class="social-links-hero">
@@ -93,7 +95,7 @@
             <!-- Ventana de terminal decorativa -->
             <div class="terminal-window">
                 <div class="terminal-body">
-                    <p><span class="prompt">&gt;_</span> ./run_medallion_architecture.sh</p>
+                    <p><span class="prompt">&gt;_</span> <span class="text-orange">./run_medallion_architecture.sh</span></p>
                     <br>
                     <!-- Animación del Pipeline con Iconos -->
                     <div class="pipeline-flow">
@@ -110,68 +112,108 @@
                         <span class="node n4" title="Gold Layer"><i class="bi bi-circle-fill"></i></span>
                     </div>
                     <br>
-                    <p class="success-msg">[✓] Gold layer materialized.</p>
-                    <p><span class="prompt">&gt;_</span> <span class="cursor">_</span></p>
+                    <p><span class="prompt">&gt;<span class="cursor-blink">_</span></span></p> 
+                    <p class="success-msg">[✓] Successfully completed.</p>
+                    
                 </div>
             </div>
         </section>
 
         <section id="projects">
-            <h3 class="section-title">
-                <span class="prompt">&gt;_</span> Projects
-            </h3>
+            <div class="about-term-window">
+                <div class="about-term-header">
+                    <span class="prompt">&nbsp;&gt;_</span>
+                    <span class="text-orange" style="margin-left: 5px;">~/cd Projects</span>
+                </div>
+                <div class="about-term-body">
+                    <!-- Eliminamos el grid y los estilos de tarjeta para que luzca como texto de terminal -->
+                    <article class="project-card" style="border: none; background-color: transparent; padding: 0; margin: 0;">
+                        <h4 style="margin-top: 0;">Project-ETL-Local-AWS</h4>
 
-            <div class="projects-grid">
-                <article class="project-card featured">
-                    <h4>Project-ETL-Local-AWS</h4>
+                        <p>
+                            Hybrid (On-Premise/AWS) ETL pipeline using Medallion
+                            Architecture. Orchestrated with Airflow via Docker
+                            for FinOps optimization, processed with PySpark,
+                            and modeled incrementally (SCD Type 2) with dbt.
+                        </p>
 
-                    <p>
-                        Hybrid (On-Premise/AWS) ETL pipeline using Medallion
-                        Architecture. Orchestrated with Airflow via Docker
-                        for FinOps optimization, processed with PySpark,
-                        and modeled incrementally (SCD Type 2) with dbt.
-                    </p>
+                        <div class="project-tech" aria-label="Project technologies">
+                            <span>Python</span>
+                            <span>Airflow</span>
+                            <span>PySpark</span>
+                            <span>AWS</span>
+                            <span>Dbt</span>
+                        </div>
 
-                    <div class="project-tech" aria-label="Project technologies">
-                        <span>Python</span>
-                        <span>Airflow</span>
-                        <span>PySpark</span>
-                        <span>AWS</span>
-                    </div>
-
-                    <a
-                        href="https://github.com/nonename-contreras/Project-ETL-Local-AWS"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="repo-link"
-                    >
-                        <i class="bi bi-github" aria-hidden="true"></i>
-                        View repository &#8599;
-                    </a>
-                </article>
+                        <a
+                            href="https://github.com/nonename-contreras/Project-ETL-Local-AWS"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="repo-link"
+                        >
+                            <i class="bi bi-github" aria-hidden="true"></i>
+                            View repository &#8599;
+                        </a>
+                    </article>
+                </div>
             </div>
         </section>
 
         <section id="about">
-            <h3 class="section-title">
-                <span class="prompt">&gt;_</span> About Me
-            </h3>
+            <div class="about-term-window">
+                <div class="about-term-header">
+                    <span class="prompt">&nbsp;&gt;_</span>
+                    <span class="text-orange" style="margin-left: 5px;">~/nano about_me.md</span>
+                    <span class="about-lang-badge" id="lang-toggle" onclick="toggleLanguage()">English</span>
+                </div>           
+                <div class="about-term-body" id="about-text-en">
+                    <p class="term-text">
+                        My background in Electromechanical Engineering sparked my interest in transforming raw data into meaningful insights. Today, I focus on building ETL pipelines and exploring cloud technologies.
+                    </p>
+                    <br>
+                    <p class="term-text">
+                        I enjoy working close to the system, from Linux and NixOS to self-hosted infrastructure, combining a hands-on mindset with a methodical approach to problem-solving.
+                    </p>
+                </div>
 
-            <div class="about-placeholder">
-                <p>+</p>
-                <p>(En construcción...)</p>
+                <div class="about-term-body" id="about-text-es" style="display: none;">
+                    <p class="term-text">
+                        Mi formación en Ingeniería Electromecánica despertó mi interés por transformar datos crudos en información de valor. Hoy en día, me enfoco en la construcción de pipelines ETL y la exploración de tecnologías en la nube.
+                    </p>
+                    <br>
+                    <p class="term-text">
+                        Disfruto trabajar cerca del sistema, desde Linux y NixOS hasta infraestructura propia (self-hosted), combinando una mentalidad práctica con un enfoque metódico para la resolución de problemas.
+                    </p>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>
-            &copy; 2026. nonename-contreras.
-            <span class="prompt">&gt;_</span>
-        </p>
+        <span class="copyright">&copy; 2026. nonename-contreras.</span>
+        <a href="#top" class="btn-cd">
+            <span class="prompt">&gt;<span class="cursor-blink">_</span></span><span class="text-orange">cd</span>
+        </a>
     </footer>
 
     <script>
+        // Función para cambiar de idioma
+        function toggleLanguage() {
+            const btn = document.getElementById('lang-toggle');
+            const enText = document.getElementById('about-text-en');
+            const esText = document.getElementById('about-text-es');
+            
+            if (btn.innerText === 'English') {
+                btn.innerText = 'Español';
+                enText.style.display = 'none';
+                esText.style.display = 'block';
+            } else {
+                btn.innerText = 'English';
+                enText.style.display = 'block';
+                esText.style.display = 'none';
+            }
+        }
+
         // Le dice al navegador que no recuerde la posición al recargar
         if (history.scrollRestoration) {
             history.scrollRestoration = 'manual';

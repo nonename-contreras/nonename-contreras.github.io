@@ -59,12 +59,18 @@ a:hover {
     color: var(--text-main);
 }
 
-.prompt,
+/* Color naranja para lo que está después del >_ y los / */
+.text-orange {
+    color: var(--accent-orange);
+}
+
 .highlight {
     color: var(--accent-green);
 }
 
+/* Color blanco puro para >_ */
 .prompt {
+    color: #ffffff;
     font-weight: bold;
 }
 
@@ -186,8 +192,8 @@ a:hover {
     margin: 5px 0;
 }
 
-.cursor {
-    color: var(--accent-green);
+.cursor-blink {
+    color: #ffffff;
     animation: blink 1s step-end infinite;
 }
 
@@ -271,13 +277,38 @@ section {
     text-align: center;
 }
 
-/* Footer */
+/* --- Footer & Botón CD --- */
 footer {
     padding: 30px 0;
     border-top: none;
     color: var(--text-muted);
     font-size: 0.8rem;
-    text-align: right;
+    display: flex;
+    justify-content: center; /* Centra el botón */
+    align-items: center;
+    position: relative;
+}
+
+.copyright {
+    position: absolute;
+    right: -10px;
+}
+
+.btn-cd {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-cd:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Responsive */
@@ -330,6 +361,15 @@ footer {
 
     .project-card {
         padding: 20px;
+    }
+    
+    /* Ajuste de footer en móviles para que no se amontone */
+    footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .copyright {
+        position: static;
     }
 }
 
@@ -409,4 +449,56 @@ footer {
 @keyframes showSuccess {
     0%, 79% { opacity: 0; }
     80%, 100% { opacity: 1; }
+}
+
+/* --- Ventana de Terminal "About Me" --- */
+.about-term-window {
+    width: 100%; 
+    background-color: var(--bg-color); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 6px;
+    margin-bottom: 40px;
+}
+
+.about-term-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    position: relative;
+    font-size: 1.2rem;
+}
+
+.about-lang-badge {
+    position: absolute;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-family: sans-serif;
+    cursor: pointer; 
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+.about-lang-badge:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.about-term-body {
+    padding: 25px 30px;
+    color: var(--text-main);
+}
+
+.about-term-body .intro-bold {
+    font-weight: bold;
+    color: #ffffff; 
+    font-size: 1.05rem;
+}
+
+@media (max-width: 480px) {
+    .about-term-body {
+        padding: 20px 15px; 
+    }
 }
